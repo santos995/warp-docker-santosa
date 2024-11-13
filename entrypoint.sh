@@ -34,6 +34,7 @@ if [ ! -f /var/lib/cloudflare-warp/reg.json ]; then
             warp-cli registration license "$WARP_LICENSE_KEY" && echo "Warp license registered!"
         fi
     fi
+    warp-cli tunnel protocol set MASQUE
     # connect to the warp server
     warp-cli --accept-tos connect
 else
